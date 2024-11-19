@@ -1,0 +1,233 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  EMPLOYEE
+  ADMIN
+}
+
+model Account {
+  id                       String    @id @default(cuid())
+  userId                   String
+  type                     String
+  provider                 String
+  providerAccountId        String
+  refresh_token            String?   @db.Text
+  access_token             String?   @db.Text
+  expires_at               Int?
+  token_type               String?
+  scope                    String?
+  id_token                 String?   @db.Text
+  session_state            String?
+  createdAt                DateTime? @default(now())
+  updatedAt                DateTime? @updatedAt
+  refresh_token_expires_in Int?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String    @id @default(cuid())
+  sessionToken String    @unique
+  userId       String
+  expires      DateTime
+  createdAt    DateTime? @default(now())
+  updatedAt    DateTime? @updatedAt
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id                String            @id @default(cuid())
+  name              String?
+  email             String?           @unique
+  emailVerified     DateTime?
+  image             String?
+  companyWebsiteUrl String?
+  companyNumber     Int?
+  socialLinks       String?
+  accounts          Account[]
+  sessions          Session[]
+  role              Role              @default(USER)
+  password          String?
+  createdAt         DateTime?         @default(now())
+  updatedAt         DateTime?         @updatedAt
+  subscription      Subscription?
+  Pentest           Pentest[]
+  Enhance           Enhances[]
+  Helpdesks         Helpdesks[]
+  Partnerships      Partnerships[]
+  Pentestsettings   Pentestsettings[]
+  voltsecCharges    Int               @default(5)
+  mail              Json[]
+}
+
+
+
+model VerificationToken {
+  identifier String
+  token      String    @unique
+  expires    DateTime
+  createdAt  DateTime? @default(now())
+  updatedAt  DateTime? @updatedAt
+
+  @@unique([identifier, token])
+}
+
+enum Membership {
+  FREE
+  PREMIUM
+  EXCLUSIVE
+}
+
+enum PentestType {
+  WEB
+  CLOUD
+  NETWORK
+  APPLICATION
+}
+
+enum SelectedBot {
+  VOLTBOT
+  HACKWING
+}
+
+enum SelectedScanMode {
+  LIGHTSCAN
+  DEEPSCAN
+  BALANCESCAN
+}
+
+model Pentestsettings {
+  id               String           @id @default(cuid())
+  email            String
+  selectedBot      SelectedBot
+  selectedScanMode SelectedScanMode
+  User             User?            @relation(fields: [userId], references: [id])
+  userId           String?
+}
+
+model Enhances {
+  id              String  @id @default(cuid())
+  businessSummary String
+  toggleOn        Boolean
+  extraKeyDetails String
+  uploadedDoc     String
+  email           String
+  User            User?   @relation(fields: [userId], references: [id])
+  userId          String?
+}
+
+model Certificates {
+  id         String    @id @default(cuid())
+  eId        String
+  issuedDate DateTime? @default(now())
+  expiryDate DateTime
+  issuedTo   String
+}
+
+model ShedulePentest {
+  id                String      @id @default(cuid())
+  pentestType       PentestType
+  scope             String
+  timeline          String
+  time              DateTime?   @default(now())
+  emailReportTo     String
+  emailReportToggle Boolean
+}
+
+model Subscription {
+  userId                 String    @unique
+  user                   User      @relation(fields: [userId], references: [id])
+  stripeCustomerId       String    @unique @map(name: "stripe_customer_id")
+  stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
+  stripePriceId          String?   @map(name: "stripe_price_id")
+  stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
+  createdAt              DateTime? @default(now())
+  updatedAt              DateTime? @updatedAt
+
+  @@id([userId, stripeCustomerId])
+}
+
+enum PentestStatus {
+  PENDING
+  COMPLETED
+  PROCESS
+  FAILED
+}
+
+model Pentest {
+  id               String            @id @default(cuid())
+  scope            String
+  name             String
+  date             DateTime?         @default(now())
+  membership       Membership?       @default(FREE)
+  pentestType      PentestType?      @default(WEB)
+  email            String
+  pentestStatus    PentestStatus?    @default(PENDING)
+  user             User              @relation(fields: [userId], references: [id])
+  userId           String
+  selectedBot      SelectedBot?
+  selectedScanMode SelectedScanMode?
+}
+
+model Verification {
+  id              String    @id @default(cuid())
+  issuedDate      DateTime? @default(now())
+  website         String
+  verified        Boolean
+  upcomingPentest String
+  status          String
+  reputation      String
+}
+
+model Helpdesks {
+  id       String    @id @default(cuid())
+  date     DateTime? @default(now())
+  email    String
+  request  String
+  name     String
+  status   String
+  subject  String
+  text     String
+  messages Json[]
+  user     User      @relation(fields: [userId], references: [id])
+  userId   String
+  file     String?
+  repliedFile String?
+}
+
+
+model Contacts {
+  id        String @id @default(cuid())
+  fromEmail String
+  message   String
+  subject   String
+}
+
+model Partnerships {
+  id String @id @default(cuid())
+
+  dealDetails        String
+  clientName         String
+  briefRequirements  String
+  additionalComments String
+  user               User   @relation(fields: [userId], references: [id])
+  userId             String
+}
+
+model Compose {
+  id String @id @default(cuid())
+  email              String
+  subject            String
+  message            String
+  file               String
+}
