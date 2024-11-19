@@ -40,8 +40,8 @@ export default function Footer() {
               <Link href="/home/pricing">
                 <li className="mb-2 hover:underline">Pricing</li>
               </Link>{" "}
-              <Link href="/home/contact">
-                <li className="mb-2 hover:underline">Contact us</li>
+              <Link href="/teamPortfolio">
+                <li className="mb-2 hover:underline">Team Portfolio</li>
               </Link>
               <Link href="/home/certificate">
                 <li className="mb-2 hover:underline">Verify Certificate</li>
