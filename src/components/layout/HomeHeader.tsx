@@ -61,17 +61,6 @@ const HomeHeader = () => {
             </button>
           </div>
           <nav className="hidden h-8 space-x-1 lg:flex">
-            {/* <Link href='/'>
-              <button
-                name='home'
-                aria-label='home'
-                className={`${style.classes} ${
-                  routerLink === '/' ? style.activeClasses : style.inactiveClasses
-                } focus:${style.activeClasses.split(' ').join(' focus:')}`}
-              >
-                Home
-              </button>
-            </Link> */}
             <div className="relative flex flex-row text-white hover:text-blue-600">
               <Link href="/home/pentest">
                 <button
@@ -137,29 +126,39 @@ const HomeHeader = () => {
                   className="w-44 rounded-xl bg-white p-1  text-sm"
                   aria-labelledby="dropdownLargeButton"
                 >
-                  <Link href="/account/dashboard">
+                  <Link href="/home/blog/web-pentest">
                     <li className="block rounded-xl px-4 py-2 text-black hover:text-blue-500">
                       Web Pentest
                     </li>
                   </Link>
-                  <Link href="/account/dashboard">
+                  <Link href="/home/blog/network-pentest">
                     <li className="block rounded-xl px-4 py-2 text-black hover:text-blue-500">
                       Network Pentest
                     </li>
                   </Link>
-                  {/* <Link href="/home/pentest/cloud"> */}
-                    <li className="rounded-xl relative px-4 py-2 text-gray-600 flex justify-start items-center gap-2 hover:cursor-pointer hover:invisible group">
-                      Cloud Pentest <Lock size={16} />
-                      <p className="absolute invisible group-hover:visible flex items-center gap-2">Premium only! <Lock size={16} /></p>
+                  <Link href="/home/blog/mobile-app-pentest">
+                    <li className="block rounded-xl px-4 py-2 text-black hover:text-blue-500">
+                      Mobile Pentest
                     </li>
-                  {/* </Link> */}
-                  {" "}
-                  {/* <Link href="/home/pentest/mobile"> */}
+                  </Link>
+                  <Link href="/home/blog/cloud-pentest">
+                    <li className="block rounded-xl px-4 py-2 text-black hover:text-blue-500">
+                      Cloud Pentest
+                    </li>
+                  </Link>
+                  {/* <Link href="/home/blog/mobile-app-pentest">
                   <li className="rounded-xl relative px-4 py-2 text-gray-600 flex justify-start items-center gap-2 hover:cursor-pointer hover:invisible group">
                       Mobile Pentest <Lock size={16} />
                       <p className="absolute invisible group-hover:visible flex items-center gap-2">Premium only! <Lock size={16} /></p>
                     </li>
-                  {/* </Link> */}
+                  </Link>
+                  {" "}
+                  <Link href="/home/blog/cloud-pentest">
+                    <li className="rounded-xl relative px-4 py-2 text-gray-600 flex justify-start items-center gap-2 hover:cursor-pointer hover:invisible group">
+                      Cloud Pentest <Lock size={16} />
+                      <p className="absolute invisible group-hover:visible flex items-center gap-2">Premium only! <Lock size={16} /></p>
+                    </li>
+                  </Link> */}
                 </ul>
               </div>
             </div>
