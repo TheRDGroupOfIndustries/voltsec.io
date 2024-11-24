@@ -53,7 +53,7 @@ function GroupChat({title, session}: {
   title: string;
   session: any;
 }) {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages]:any = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -95,7 +95,7 @@ function GroupChat({title, session}: {
 
       const data = await response.json();
       if (data.success) {
-        setMessages((prevMessages) => [...prevMessages, data.data]);
+        setMessages((prevMessages: any) => [...prevMessages, data.data]);
         setNewMessage('');
       } else {
         console.error('Failed to send message:', data.error);
@@ -123,7 +123,7 @@ function GroupChat({title, session}: {
     <div className="w-full h-4/5 flex justify-between items-start">
     <div className="w-2/3 h-full px-3 flex justify-end items-start flex-col gap-1 overflow-auto" style={{scrollbarWidth: "none"}}>
       {
-       messages.length > 0 && messages.map((msg:any, index) => (
+       messages.length > 0 && messages.map((msg:any, index: number) => (
           <ChatBubble key={index} message={msg} 
           variant={msg.sender[0] === session.user.name ? 'default' : 'gray'}
           />
