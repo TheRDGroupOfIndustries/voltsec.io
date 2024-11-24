@@ -1,6 +1,5 @@
 "use client";
 
-import Link from 'next/link';
 import React from "react";
 import Bubble from "./bubble";
 import { Input } from "@/components/ui/input";
@@ -84,7 +83,10 @@ function GroupChat({title, session}: {
       }
     };
 
-    fetchMessages();
+  const interval = setInterval(() => {
+      fetchMessages();
+    }, 3000);
+
     const pusher = new Pusher("8a72015d95c7eb18f1f5", {
       cluster: "ap2",
     });
@@ -96,11 +98,10 @@ function GroupChat({title, session}: {
     });
 
     return () => {
+      clearInterval(interval);
       pusher.unsubscribe(`chat-${title}`);
     };
-    // return () => {
-    //   setMessages([]);
-    // };
+
   }, [title]);
 
   // Handle sending a new message

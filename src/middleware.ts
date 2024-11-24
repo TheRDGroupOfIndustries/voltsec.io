@@ -14,7 +14,7 @@ export async function middleware(request: NextRequest) {
   // }
   // There is dashboard is Empty page
   if (url.pathname === "/dashboard") {
-    return NextResponse.redirect(new URL("/dashboard/users", request.url));
+    return NextResponse.redirect(new URL("/dashboard/chat", request.url));
   }
 }
 

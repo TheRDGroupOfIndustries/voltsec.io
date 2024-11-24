@@ -4,9 +4,6 @@ import { authOptions } from '../auth/[...nextauth]/option';
 
 export async function GET(req: Request) {
   const session = await getServerSession(authOptions);
-    // const {session} = await req.json();
-    // console.log(session);
-    
   if (!session) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
