@@ -30,10 +30,9 @@ import { editUserSchema } from "@/resource/validation/validation";
 import { User } from "@prisma/client";
 import { toast } from "sonner";
 
-export default function EditUserForm({ user }: { user: User }) {
+export default function EditUserForm({ user }: { user: any }) {
   const [error, setError] = React.useState<string | undefined>("");
   const [tab, setTab] = React.useState<boolean>(false);
-
   const [isPending, setIsPending] = React.useState<boolean>(false);
   const form = useForm<z.infer<typeof editUserSchema>>({
     resolver: zodResolver(editUserSchema),
@@ -44,9 +43,12 @@ export default function EditUserForm({ user }: { user: User }) {
       voltsecCharges: Number(user.voltsecCharges)
     },
   });
-  async function onSubmit(values: z.infer<typeof editUserSchema>) {
+  async function onSubmit(values?: any, e?:any) {
+    e.preventDefault();
     setError("");
     setIsPending(true);
+    console.log(values);
+    
     const data = await EditUser(values, user.id);
     if (data?.error) {
       form.reset();
@@ -135,7 +137,8 @@ export default function EditUserForm({ user }: { user: User }) {
                 <SelectContent>
                   <SelectItem value="USER">USER</SelectItem>
                   <SelectItem value="ADMIN">ADMIN</SelectItem>
-                  <SelectItem value="EMPLOYEE">EMPLOYEE</SelectItem>
+                  <SelectItem value="SALES">SALES</SelectItem>
+                  <SelectItem value="PENTESTER">PENTESTER</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />

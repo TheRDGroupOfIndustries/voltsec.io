@@ -5,6 +5,7 @@ import "@/resource/styles/globals.css";
 import NextAuthProvider from "@/core/providers/Provider";
 import { useEffect } from "react";
 import DisableInspect from "@/components/DisableInspect";
+import { ThemeProvider } from "next-themes";
 
 export const viewport: Viewport = {
   themeColor: "#000",
@@ -56,12 +57,7 @@ export default function RootLayout({
 
         <NextAuthProvider>
         {/* <DisableInspect> */}
-          {/* <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          > */}
+
           {children}
           {/* </ThemeProvider> */}
             {/* </DisableInspect> */}

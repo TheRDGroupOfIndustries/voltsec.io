@@ -5,7 +5,7 @@ import { ColumnDef } from "@tanstack/react-table";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { User } from "@prisma/client";
-import { Book, Shield, User2Icon } from "lucide-react";
+import { Cpu, Shield, User2Icon, Book } from "lucide-react";
 import { DataTableColumnHeader } from "./user-data-table-column-header";
 import { DataTableRowActions } from "./user-data-table-row-actions";
 import { ROLES } from "@/resource/enum/enum";
@@ -22,8 +22,13 @@ export const roles = [
     icon: User2Icon,
   },
   {
-    value: ROLES.EMPLOYEE,
-    label: "Employee",
+    value: ROLES.PENTESTER,
+    label: "Pentester",
+    icon: Cpu,
+  },
+  {
+    value: ROLES.SALES,
+    label: "Sales",
     icon: Book,
   },
 ];
@@ -82,14 +87,6 @@ export const columns: ColumnDef<User>[] = [
     cell: ({ row }: any) => {
       return (
         <div className="flex space-x-2 items-center">
-          {/* <Avatar className="h-8 w-8">
-            <AvatarImage
-              src={row.getValue("image") || "https://github.com/shadcn.png"}
-            />
-            <AvatarFallback>
-              {row.getValue("image")?.slice(0, 2).toUpperCase()}
-            </AvatarFallback>
-          </Avatar> */}
           <span className="max-w-[300px] truncate font-medium">
             {row.getValue("name")}
           </span>

@@ -9,7 +9,9 @@ import { editUserSchema } from '@/resource/validation/validation';
 
 export const EditUser = async (values: z.infer<typeof editUserSchema>, id: string) => {
   const validatedFields = editUserSchema.safeParse(values);
-
+  
+  // console.log(validatedFields);
+  
   if (!validatedFields.success) {
     return { error: 'Invalid fields!' };
   }

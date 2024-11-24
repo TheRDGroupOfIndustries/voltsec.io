@@ -17,6 +17,7 @@ export const routes = {
     CERTIFICATE: "/dashboard/certificate",
     CREATE: "/dashboard/helpdesk/inbox/create",
     SHEDULE: "/dashboard/shedule",
+    CHAT: "/dashboard/chat",
   },
   AUTH_LAYOUT: {
     TERMS: "/terms",

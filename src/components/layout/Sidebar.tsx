@@ -3,7 +3,7 @@
 import { CalendarDays, LucideLock } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface SidebarProps {
   onToggleSidebar: () => void;
@@ -13,8 +13,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar }) => {
   const [open, setOpen] = useState(true);
   const [notification, setnotification] = useState(true);
   const path = usePathname();
-
-
   return (
     <aside
       className="-trangray-x-full md:trangray-x-0 fixed left-0  z-40 h-[92vh] w-72  pt-4 transition-transform border-gray-700 bg-white dark:bg-gray-800 top-[8vh]"

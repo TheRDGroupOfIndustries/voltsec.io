@@ -33,6 +33,8 @@ import {
   MoonIcon,
   SunIcon,
   ShieldCheckIcon,
+  MessageSquareText,
+  Clock8,
 } from "lucide-react";
 
 const Google = ({ ...props }: LucideProps) => (
@@ -84,6 +86,7 @@ const Github = ({ ...props }: LucideProps) => (
 export type Icon = LucideProps;
 
 export const Icons = {
+  TIME: Clock8,
   LOGO: Command,
   CLOSE: X,
   SPINNER: Loader2,
@@ -119,4 +122,5 @@ export const Icons = {
   MOONICON: MoonIcon,
   SUNICON: SunIcon,
   SHIELDCHECKICON:ShieldCheckIcon,
+  CHAT: MessageSquareText
 };

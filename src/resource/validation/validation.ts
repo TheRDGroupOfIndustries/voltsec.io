@@ -21,7 +21,7 @@ export const pentestFormSchema = z.object({
 export const editUserSchema = z.object({
   name: z.optional(z.string()),
   email: z.optional(z.string().email()),
-  role: z.enum([Role.EMPLOYEE, Role.USER, Role.ADMIN]),
+  role: z.enum([Role.PENTESTER, Role.SALES, Role.USER, Role.ADMIN]),
   voltsecCharges: z.optional(z.any())
 });
 export const EditPentestFormSchema = z.object({

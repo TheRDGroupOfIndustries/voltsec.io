@@ -5,5 +5,6 @@ export enum status {
 export enum ROLES {
   ADMIN = "ADMIN",
   USER = "USER",
-  EMPLOYEE = "EMPLOYEE",
+  PENTESTER = "PENTESTER",
+  SALES = "SALES",
 }

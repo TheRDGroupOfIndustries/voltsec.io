@@ -29,4 +29,5 @@ export const language = {
   SCOPE: 'Scope',
   SHEDULE : "Shedule",
   SHEDULE_DESC:' View & manage Shedule.',
+  CHAT: 'Chat'
 };

@@ -7,32 +7,46 @@ import { redirect } from "next/navigation";
 import { Toaster } from "sonner";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/option";
+import { ThemeProvider } from "next-themes";
 
 export default async function AppLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const count = await getCounts(); // Fetch server-side data
+  const count = await getCounts();
   const session = await getServerSession(authOptions);
-  console.log(session);
 
-  // Check if session exists and if the user has admin role
-  if (!session || session.user?.role !== "ADMIN") {
-    redirect("/"); // Redirect to home if not an admin or no session
+  if (
+    !session ||
+    !["ADMIN", "PENTESTER", "SALES"].includes(session.user?.role)
+  ) {
+    redirect("/");
   }
 
-  if (!count) {
+  if (!count && !session) {
     return (
       <div>
         <Loading />
       </div>
-    ); // Handle loading state
+    );
   }
 
   return (
     <NextAuthProvider>
-      <DashboardLayout count={count}>{children}</DashboardLayout>
+      {/* <SendbirdProvider
+      userId={session.user.id}
+      appId={APP_ID}
+      > */}
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="dark"
+        enableSystem
+        disableTransitionOnChange
+        >
+        <DashboardLayout count={count}>{children}</DashboardLayout>
+      </ThemeProvider>
+        {/* </SendbirdProvider> */}
       <Toaster richColors />
     </NextAuthProvider>
   );

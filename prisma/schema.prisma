@@ -9,9 +9,11 @@ datasource db {
 
 enum Role {
   USER
-  EMPLOYEE
   ADMIN
+  PENTESTER
+  SALES
 }
+
 
 model Account {
   id                       String    @id @default(cuid())
