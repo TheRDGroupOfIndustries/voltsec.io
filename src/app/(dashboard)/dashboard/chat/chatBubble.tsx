@@ -1,6 +1,9 @@
 import React from 'react'
 
-function ChatBubble({varient, message}: any) {
+function ChatBubble({varient, message}: {
+  varient?: any;
+  message: any;
+}) {
 
   return (
 <div className={`w-auto h-auto overflow-hidden ${varient==="gray" ? "bg-gray-200 dark:bg-blue-950 dark:text-white text-black" : "bg-blue-600 text-white"} rounded-lg mb-2 flex flex-col justify-start items-start px-3 pb-4`}>

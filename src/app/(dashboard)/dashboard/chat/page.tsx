@@ -9,8 +9,16 @@ import ChatBubble from "./chatBubble";
 import { useEffect, useState } from 'react';
 import sales from '@/assets/sales.webp';
 import tester from '@/assets/pentester.png'
-import { useChat } from '@/core/hooks/useChat';
+import Pusher from 'pusher-js';
 
+
+interface Message {
+  id: string;
+  sender: string;
+  message: string;
+  group: string;
+  timestamp?: string;
+}
 export default async function ChatPage() {
   const [response, setResponse] = useState([]);
   const [active, setActive] = useState(response[0]);
@@ -77,9 +85,22 @@ function GroupChat({title, session}: {
     };
 
     fetchMessages();
+    const pusher = new Pusher("8a72015d95c7eb18f1f5", {
+      cluster: "ap2",
+    });
+
+    const channel = pusher.subscribe(`chat-${title}`);
+
+    channel.bind("new-message", (newMsg: Message) => {
+      setMessages((prevMessages:any) => [...prevMessages, newMsg]);
+    });
+
     return () => {
-      setMessages([]);
+      pusher.unsubscribe(`chat-${title}`);
     };
+    // return () => {
+    //   setMessages([]);
+    // };
   }, [title]);
 
   // Handle sending a new message
@@ -124,8 +145,7 @@ function GroupChat({title, session}: {
     <div className="w-2/3 h-full px-3 flex justify-end items-start flex-col gap-1 overflow-auto" style={{scrollbarWidth: "none"}}>
       {
        messages.length > 0 && messages.map((msg:any, index: number) => (
-          <ChatBubble key={index} message={msg} 
-          variant={msg.sender[0] === session.user.name ? 'default' : 'gray'}
+          <ChatBubble key={index} message={msg} varient={`${msg.sender[0] === session.user.name ? '' : 'gray'}`}
           />
         ))
       }
