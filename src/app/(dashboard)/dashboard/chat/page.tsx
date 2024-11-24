@@ -143,7 +143,7 @@ function GroupChat({title, session}: {
   </div>
     </div>
     <div className="w-full h-4/5 flex justify-between items-start">
-    <div className="w-2/3 h-full px-3 flex justify-end items-start flex-col gap-1 overflow-auto" style={{scrollbarWidth: "none"}}>
+    <div className="w-2/3 h-auto px-3 flex justify-end items-start flex-col gap-1 overflow-auto" style={{scrollbarWidth: "none"}}>
       {
        messages.length > 0 && messages.map((msg:any, index: number) => (
           <ChatBubble key={index} message={msg} varient={`${msg.sender[0] === session.user.name ? '' : 'gray'}`}
