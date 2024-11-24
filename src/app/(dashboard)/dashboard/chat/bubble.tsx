@@ -1,6 +1,7 @@
 import React from 'react'
 import sales from '@/assets/sales.webp';
 import tester from '@/assets/pentester.png'
+import icon from "@/assets/images/logo.jpeg"
 
 function Bubble({title, onclick}: {
   title: string,
@@ -11,7 +12,7 @@ function Bubble({title, onclick}: {
     <div className="w-[4.5rem] rounded-full h-full overflow-hidden bg-white">
       <img
         className="w-full h-full object-cover"
-        src={`${title==="Sales" ? tester.src : ""} ${title==="Pentesters" ? sales.src: ""}`}
+        src={`${title==="Sales" ? tester.src : ""} ${title==="Pentesters" ? sales.src: ""} ${title==="Admins" ? icon.src: ""}`}
         alt="avatar"
       />
     </div>

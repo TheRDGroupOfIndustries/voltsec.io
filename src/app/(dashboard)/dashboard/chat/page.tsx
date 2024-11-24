@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import sales from '@/assets/sales.webp';
 import tester from '@/assets/pentester.png'
 import Pusher from 'pusher-js';
+import icon from "@/assets/images/logo.jpeg"
 
 
 interface Message {
@@ -133,7 +134,7 @@ function GroupChat({title, session}: {
     <div className="w-14 rounded-full h-full overflow-hidden">
     <img
       className="w-full h-full object-cover"
-      src={`${title==="Sales" ? tester.src : ""} ${title==="Pentesters" ? sales.src: ""}`}
+      src={`${title==="Sales" ? tester.src : ""} ${title==="Pentesters" ? sales.src: ""} ${title==="Admins" ? icon.src: ""}`}
       alt="avatar"
     />
   </div>

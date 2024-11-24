@@ -12,7 +12,7 @@ export async function GET(req: Request) {
   
   let allowedGroups: string[] = [];
   if (role === 'ADMIN') {
-    allowedGroups = ['Pentesters', 'Sales'];
+    allowedGroups = ['Pentesters', 'Sales', 'Admins'];
   } else if (role === 'SALES') {
     allowedGroups = ['Sales'];
   } else if (role === 'PENTESTER') {
