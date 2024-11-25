@@ -45,7 +45,7 @@ const ExpertSupport = () => {
               your cybersecurity journey is backed by the expertise needed to
               fortify your digital defenses effectively.
             </p>
-            <Link href="/home/contact">
+            <Link href="/contact">
               <div
                 data-aos="fade-down"
                 data-aos-duration="1000"

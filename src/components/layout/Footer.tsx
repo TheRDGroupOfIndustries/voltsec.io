@@ -18,16 +18,16 @@ export default function Footer() {
               Pentest
             </h2>
             <ul className="text-gray-200">
-              <Link href="/home/pentest/web">
+              <Link href="/pentest/web">
                 <li className="mb-2 hover:underline">Web Pentest</li>
               </Link>
-              <Link href="/home/pentest/cloud">
+              <Link href="/pentest/cloud">
                 <li className="mb-2 hover:underline">Cloud Pentest</li>
               </Link>{" "}
-              <Link href="/home/pentest/network">
+              <Link href="/pentest/network">
                 <li className="mb-2 hover:underline">Network Pentest</li>
               </Link>
-              <Link href="/home/pentest/mobile">
+              <Link href="/pentest/mobile">
                 <li className="mb-2 hover:underline">Mobile Pentest</li>
               </Link>
             </ul>
@@ -37,13 +37,13 @@ export default function Footer() {
               Resources
             </h2>
             <ul className="text-gray-200">
-              <Link href="/home/pricing">
+              <Link href="/pricing">
                 <li className="mb-2 hover:underline">Pricing</li>
               </Link>{" "}
               <Link href="/teamPortfolio">
                 <li className="mb-2 hover:underline">Team Portfolio</li>
               </Link>
-              <Link href="/home/certificate">
+              <Link href="/certificate">
                 <li className="mb-2 hover:underline">Verify Certificate</li>
               </Link>
               <a href="https://trustseal.voltsec.io">
@@ -57,13 +57,13 @@ export default function Footer() {
             </h2>
             <ul className="text-gray-200">
               <li className="mb-2">
-                <Link href="/home/privacy" className="hover:underline">
+                <Link href="/privacy" className="hover:underline">
                   Privacy Policy
                 </Link>
               </li>
 
               <li className="mb-2">
-                <Link href="/home/terms" className="hover:underline">
+                <Link href="/terms" className="hover:underline">
                   Terms &amp; Conditions
                 </Link>
               </li>

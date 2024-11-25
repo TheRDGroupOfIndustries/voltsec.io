@@ -11,15 +11,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: 'https://voltsec-io.com/home/pricing',
+      url: 'https://voltsec-io.com/pricing',
       lastModified: new Date(),
     },
     {
-      url: 'https://voltsec-io.com/home/pentest',
+      url: 'https://voltsec-io.com/pentest',
       lastModified: new Date(),
     },
     {
-      url: 'https://voltsec-io.com/home/contact',
+      url: 'https://voltsec-io.com/contact',
       lastModified: new Date(),
     },
   ]

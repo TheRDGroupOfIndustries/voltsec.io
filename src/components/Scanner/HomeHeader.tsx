@@ -81,11 +81,11 @@ const HomeHeader = () => {
                 Blogs
               </button>
             </Link>
-            <Link href="https://www.voltsec-io.com/home/pricing">
+            <Link href="https://www.voltsec-io.com/pricing">
               <button
                 name="pricing"
                 className={`${style.classes} ${
-                  routerLink === "https://www.voltsec-io.com/home/pricing"
+                  routerLink === "https://www.voltsec-io.com/pricing"
                     ? style.activeClasses
                     : style.inactiveClasses
                 } focus:${style.activeClasses.split(" ").join(" focus:")}`}
@@ -105,11 +105,11 @@ const HomeHeader = () => {
                 Account
               </button>
             </Link>
-            <Link href="https://www.voltsec-io.com/home/contact">
+            <Link href="https://www.voltsec-io.com/contact">
               <button
                 name="Contact"
                 className={`${style.classes} ${
-                  routerLink === "/home/contact"
+                  routerLink === "/contact"
                     ? style.activeClasses
                     : style.inactiveClasses
                 } focus:${style.activeClasses.split(" ").join(" focus:")}`}
@@ -165,12 +165,12 @@ const HomeHeader = () => {
           <div className="space-y-6 px-5 py-6 ">
             <ul className="grid grid-cols-2 gap-x-8 gap-y-2 border-b-2 border-t-2 border-gray-600 pb-5 pt-5">
               <div className=" col-span-2 grid grid-cols-2 gap-x-8 gap-y-5 border-b-2 border-gray-600 pb-5 pl-2">
-                <Link href="/home/pentest">
+                <Link href="/pentest">
                   <button
                     name="Services"
                     onClick={() => setOpen(!open)}
                     className={`${style.classes} ${
-                      routerLink === "/home/pentest"
+                      routerLink === "/pentest"
                         ? style.activeClasses
                         : style.inactiveClasses
                     } focus:${style.activeClasses.split(" ").join(" focus:")}`}
@@ -178,7 +178,7 @@ const HomeHeader = () => {
                     Services
                   </button>
                 </Link>
-                {/* <Link href="/home/Blog">
+                {/* <Link href="/Blog">
 									<a
 										onClick={() => setOpen(!open)}
 										className={`${style.classes} ${
@@ -192,12 +192,12 @@ const HomeHeader = () => {
 										Blog
 									</a>
 								</Link> */}
-                <Link href="/home/pricing">
+                <Link href="/pricing">
                   <button
                     name="pricing"
                     onClick={() => setOpen(!open)}
                     className={`${style.classes} ${
-                      routerLink === "/home/pricing"
+                      routerLink === "/pricing"
                         ? style.activeClasses
                         : style.inactiveClasses
                     } focus:${style.activeClasses.split(" ").join(" focus:")}`}
@@ -218,23 +218,23 @@ const HomeHeader = () => {
                     Account
                   </button>
                 </Link>
-                {/* <Link href="/home/Team">
+                {/* <Link href="/Team">
    <button
     onClick={() => setOpen(!open)}
     className={`${style.classes} ${
-     routerLink === '/home/Team' 
+     routerLink === '/Team' 
     ? style.activeClasses
     : style.inactiveClasses
     } focus:${style.activeClasses.split(' ').join(' focus:')}`}>
     Team
    </button>
    </Link> */}
-                <Link href="/home/contact">
+                <Link href="/contact">
                   <button
                     name="Contact"
                     onClick={() => setOpen(!open)}
                     className={`${style.classes} ${
-                      routerLink === "/home/contact"
+                      routerLink === "/contact"
                         ? style.activeClasses
                         : style.inactiveClasses
                     } focus:${style.activeClasses.split(" ").join(" focus:")}`}
@@ -243,7 +243,7 @@ const HomeHeader = () => {
                   </button>
                 </Link>
               </div>
-              <Link href="/home/pentest/web">
+              <Link href="/pentest/web">
                 <li
                   onClick={() => setOpen(!open)}
                   className="m-2 block rounded-xl text-black hover:text-blue-500"
@@ -251,7 +251,7 @@ const HomeHeader = () => {
                   Web Pentest
                 </li>
               </Link>
-              <Link href="/home/pentest/cloud">
+              <Link href="/pentest/cloud">
                 <li
                   onClick={() => setOpen(!open)}
                   className="m-2 block rounded-xl text-black hover:text-blue-500"
@@ -259,7 +259,7 @@ const HomeHeader = () => {
                   Cloud Pentest
                 </li>
               </Link>{" "}
-              <Link href="/home/pentest/network">
+              <Link href="/pentest/network">
                 <li
                   onClick={() => setOpen(!open)}
                   className="m-2 block rounded-xl text-black hover:text-blue-500"
@@ -267,7 +267,7 @@ const HomeHeader = () => {
                   Network Pentest
                 </li>
               </Link>
-              <Link href="/home/pentest/mobile">
+              <Link href="/pentest/mobile">
                 <li
                   onClick={() => setOpen(!open)}
                   className="m-2 block rounded-xl text-black hover:text-blue-500"

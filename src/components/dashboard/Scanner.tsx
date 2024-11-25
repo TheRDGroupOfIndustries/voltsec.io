@@ -118,12 +118,12 @@ function PentestScanner({ settings }: any) {
       // toast.success(success);
       if (scanType === "Web") {
         router.push(
-          `/home/pentest/web/webResult?url=${PentestRequest.scope}&mode=${selectedMode}`
+          `/pentest/web/webResult?url=${PentestRequest.scope}&mode=${selectedMode}`
         );
       }
       if (scanType === "Network") {
         router.push(
-          `/home/pentest/network/results?url=${PentestRequest.scope}`
+          `/pentest/network/results?url=${PentestRequest.scope}`
         );
       }
       setPentestRequest({ scope: "" });

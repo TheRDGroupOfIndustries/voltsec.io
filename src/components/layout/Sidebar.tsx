@@ -302,7 +302,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleSidebar }) => {
               </p>
               <Link
                 className="text-sm font-medium text-blue-700 underline-offset-8 hover:underline"
-                href="/home/pricing"
+                href="/pricing"
               >
                 Upgrade Now to experience first
               </Link>

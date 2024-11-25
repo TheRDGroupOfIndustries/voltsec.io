@@ -62,11 +62,11 @@ const HomeHeader = () => {
           </div>
           <nav className="hidden h-8 space-x-1 lg:flex">
             <div className="relative flex flex-row text-white hover:text-blue-600">
-              <Link href="/home/pentest">
+              <Link href="/pentest">
                 <button
                   name="Services"
                   className={`${style.classes} ${
-                    routerLink === "/home/pentest"
+                    routerLink === "/pentest"
                       ? style.activeClasses
                       : style.inactiveClasses
                   } focus:${style.activeClasses.split(" ").join(" focus:")}`}
@@ -126,34 +126,34 @@ const HomeHeader = () => {
                   className="w-44 rounded-xl bg-white p-1  text-sm"
                   aria-labelledby="dropdownLargeButton"
                 >
-                  <Link href="/home/blog/web-pentest">
+                  <Link href="/blog/web-pentest">
                     <li className="block rounded-xl px-4 py-2 text-black hover:text-blue-500">
                       Web Pentest
                     </li>
                   </Link>
-                  <Link href="/home/blog/network-pentest">
+                  <Link href="/blog/network-pentest">
                     <li className="block rounded-xl px-4 py-2 text-black hover:text-blue-500">
                       Network Pentest
                     </li>
                   </Link>
-                  <Link href="/home/blog/mobile-app-pentest">
+                  <Link href="/blog/mobile-app-pentest">
                     <li className="block rounded-xl px-4 py-2 text-black hover:text-blue-500">
                       Mobile Pentest
                     </li>
                   </Link>
-                  <Link href="/home/blog/cloud-pentest">
+                  <Link href="/blog/cloud-pentest">
                     <li className="block rounded-xl px-4 py-2 text-black hover:text-blue-500">
                       Cloud Pentest
                     </li>
                   </Link>
-                  {/* <Link href="/home/blog/mobile-app-pentest">
+                  {/* <Link href="/blog/mobile-app-pentest">
                   <li className="rounded-xl relative px-4 py-2 text-gray-600 flex justify-start items-center gap-2 hover:cursor-pointer hover:invisible group">
                       Mobile Pentest <Lock size={16} />
                       <p className="absolute invisible group-hover:visible flex items-center gap-2">Premium only! <Lock size={16} /></p>
                     </li>
                   </Link>
                   {" "}
-                  <Link href="/home/blog/cloud-pentest">
+                  <Link href="/blog/cloud-pentest">
                     <li className="rounded-xl relative px-4 py-2 text-gray-600 flex justify-start items-center gap-2 hover:cursor-pointer hover:invisible group">
                       Cloud Pentest <Lock size={16} />
                       <p className="absolute invisible group-hover:visible flex items-center gap-2">Premium only! <Lock size={16} /></p>
@@ -162,7 +162,7 @@ const HomeHeader = () => {
                 </ul>
               </div>
             </div>
-            <Link href="/home/blog">
+            <Link href="/blog">
               <button
                 name="Blog"
                 className={`${style.classes} ${
@@ -174,11 +174,11 @@ const HomeHeader = () => {
                 Blogs
               </button>
             </Link>
-            <Link href="/home/pricing">
+            <Link href="/pricing">
               <button
                 name="pricing"
                 className={`${style.classes} ${
-                  routerLink === "/home/pricing"
+                  routerLink === "/pricing"
                     ? style.activeClasses
                     : style.inactiveClasses
                 } focus:${style.activeClasses.split(" ").join(" focus:")}`}
@@ -198,11 +198,11 @@ const HomeHeader = () => {
                 Account
               </button>
             </Link>
-            <Link href="/home/contact">
+            <Link href="/contact">
               <button
                 name="Contact"
                 className={`${style.classes} ${
-                  routerLink === "/home/contact"
+                  routerLink === "/contact"
                     ? style.activeClasses
                     : style.inactiveClasses
                 } focus:${style.activeClasses.split(" ").join(" focus:")}`}
@@ -338,12 +338,12 @@ const HomeHeader = () => {
           <div className="space-y-6 px-5 py-6 ">
             <ul className=" grid grid-cols-2 gap-x-8 gap-y-2 border-b-2 border-t-2 border-gray-600 pb-5 pt-5">
               <div className=" col-span-2 grid grid-cols-2 gap-x-8 gap-y-5 border-b-2 border-gray-600 pb-5 pl-2">
-                <Link href="/home/pentest">
+                <Link href="/pentest">
                   <button
                     name="Services"
                     onClick={() => setOpen(!open)}
                     className={`${style.classes} ${
-                      routerLink === "/home/pentest"
+                      routerLink === "/pentest"
                         ? style.activeClasses
                         : style.inactiveClasses
                     } focus:${style.activeClasses.split(" ").join(" focus:")}`}
@@ -352,12 +352,12 @@ const HomeHeader = () => {
                   </button>
                 </Link>
 
-                <Link href="/home/pricing">
+                <Link href="/pricing">
                   <button
                     name="pricing"
                     onClick={() => setOpen(!open)}
                     className={`${style.classes} ${
-                      routerLink === "/home/pricing"
+                      routerLink === "/pricing"
                         ? style.activeClasses
                         : style.inactiveClasses
                     } focus:${style.activeClasses.split(" ").join(" focus:")}`}
@@ -378,12 +378,12 @@ const HomeHeader = () => {
                     Account
                   </button>
                 </Link>
-                <Link href="/home/contact">
+                <Link href="/contact">
                   <button
                     name="Contact"
                     onClick={() => setOpen(!open)}
                     className={`${style.classes} ${
-                      routerLink === "/home/contact"
+                      routerLink === "/contact"
                         ? style.activeClasses
                         : style.inactiveClasses
                     } focus:${style.activeClasses.split(" ").join(" focus:")}`}
@@ -392,7 +392,7 @@ const HomeHeader = () => {
                   </button>
                 </Link>
               </div>
-              <Link href="/home/pentest/web">
+              <Link href="/pentest/web">
                 <li
                   onClick={() => setOpen(!open)}
                   className="m-2 block rounded-xl text-gray-100 hover:text-blue-500"
@@ -400,7 +400,7 @@ const HomeHeader = () => {
                   Web Pentest
                 </li>
               </Link>
-              <Link href="/home/pentest/cloud">
+              <Link href="/pentest/cloud">
                 <li
                   onClick={() => setOpen(!open)}
                   className="m-2 block rounded-xl text-gray-100 hover:text-blue-500"
@@ -408,7 +408,7 @@ const HomeHeader = () => {
                   Cloud Pentest
                 </li>
               </Link>{" "}
-              <Link href="/home/pentest/network">
+              <Link href="/pentest/network">
                 <li
                   onClick={() => setOpen(!open)}
                   className="m-2 block rounded-xl text-gray-100 hover:text-blue-500"
@@ -416,7 +416,7 @@ const HomeHeader = () => {
                   Network Pentest
                 </li>
               </Link>
-              <Link href="/home/pentest/mobile">
+              <Link href="/pentest/mobile">
                 <li
                   onClick={() => setOpen(!open)}
                   className="m-2 block rounded-xl text-gray-100 hover:text-blue-500"

@@ -93,7 +93,7 @@ const Hero = () => {
                 </div>
               </Link>
             ) : (
-              <Link href="/home/pentest">
+              <Link href="/pentest">
                 <div className="m-2 inline-flex w-64 xs:w-80 items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium text-white shadow-2xl shadow-black/40 bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-primary-300 focus:ring-primary-900 md:w-auto">
                   Get Started
                   <svg
@@ -111,7 +111,7 @@ const Hero = () => {
               </Link>
             )}
 
-            <Link href="/home/contact">
+            <Link href="/contact">
               <div className="m-2 inline-flex w-64 xs:w-80 items-center justify-center rounded-lg bg-blue-600 px-5 py-3 text-center text-base font-medium text-white shadow-2xl shadow-black/40 hover:bg-blue-700 focus:ring-4 focus:ring-primary-300 focus:ring-primary-900 md:w-auto">
                 <svg
                   className="mr-1 h-6 w-6"

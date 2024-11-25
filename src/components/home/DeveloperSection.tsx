@@ -51,7 +51,7 @@ const DeveloperSection = () => {
             patch every issue, fostering a seamless and efficient partnership in
             securing your digital assets.
           </p>
-          <Link href="/home/contact">
+          <Link href="/contact">
             <div className="m-2 my-10 inline-flex w-80 items-center justify-center rounded-lg bg-white/80  p-4 px-5 text-center text-base font-medium text-blue-500 shadow-2xl shadow-black/40 hover:bg-white md:w-auto">
               Speak To Sales
               <svg

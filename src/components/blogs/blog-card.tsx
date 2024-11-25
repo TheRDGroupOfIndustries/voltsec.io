@@ -16,7 +16,7 @@ export function BlogCard({ data }: { data: IBlog }) {
     <Card className="group bg-blue-100 p-3 rounded-3xl border-2 overflow-hidden hover:shadow-xl">
       <Link
         aria-label={data?.blogName}
-        href={`/home/blog/${data?.slug}`}
+        href={`/blog/${data?.slug}`}
       >
         <CardHeader className="overflow-hidden p-0">
           <AspectRatio
@@ -37,7 +37,7 @@ export function BlogCard({ data }: { data: IBlog }) {
         </CardHeader>
       </Link>
       <Link
-        href={`/home/blog/${data?.slug}`}
+        href={`/blog/${data?.slug}`}
         tabIndex={-1}
       >
         <CardFooter className="flex flex-col items-start justify-start px-5 py-3 gap-5">

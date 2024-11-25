@@ -14,7 +14,7 @@ const Support: React.FC = async () => {
         <p className='font-light text-gray-100  sm:text-xl lg:mb-16'>Feel Free To Explore</p>
       </div>
       <div className='flex max-w-6xl flex-row flex-wrap items-stretch justify-around  p-5 text-gray-100'>
-        <Link href='/home/privacy'>
+        <Link href='/privacy'>
         <div
           data-aos='zoom-in'
           data-aos-duration='1000'
@@ -34,7 +34,7 @@ const Support: React.FC = async () => {
             </div>
         </div>
         </Link>
-        <Link href='/home/pricing'>
+        <Link href='/pricing'>
         <div
           data-aos='zoom-in'
           data-aos-duration='1000'
@@ -54,7 +54,7 @@ const Support: React.FC = async () => {
             </div>
         </div>
           </Link>
-          <Link href='/home/terms'>
+          <Link href='/terms'>
         <div
           data-aos='zoom-in'
           data-aos-duration='1000'
@@ -74,7 +74,7 @@ const Support: React.FC = async () => {
             </div>
         </div>
           </Link>
-        <Link href='/home/contact'>
+        <Link href='/contact'>
         <div
           data-aos='zoom-in'
           data-aos-duration='1000'
@@ -114,7 +114,7 @@ const Support: React.FC = async () => {
             </div>
         </div>
           </Link>
-          <Link href='/home/pentest'>
+          <Link href='/pentest'>
         <div
           data-aos='zoom-in'
           data-aos-duration='1000'

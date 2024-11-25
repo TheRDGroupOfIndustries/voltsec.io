@@ -15,7 +15,7 @@ const Cta = () => {
             </h3>
           </div>
           <div className='row-span-2 flex flex-col items-center justify-center gap-x-5 md:flex-row'>
-            <Link href='/home/pentest'>
+            <Link href='/pentest'>
               <div className='m-2 inline-flex w-80 items-center justify-center rounded-lg bg-blue-600 p-4 px-5 py-3 text-center text-base font-medium text-white shadow-2xl shadow-black/40 hover:bg-blue-700 focus:ring-4  md:w-auto'>
                 Scan now
                 <svg className='-mr-1 ml-2 h-5 w-5' fill='currentColor' viewBox='0 0 20 20'>
@@ -27,7 +27,7 @@ const Cta = () => {
                 </svg>
               </div>
             </Link>
-            <Link href='/home/pricing'>
+            <Link href='/pricing'>
               <div className='m-2 flex w-80 flex-row items-center justify-center rounded-lg bg-white/80 px-5 py-3 text-center text-base font-medium text-blue-500 shadow-2xl shadow-black/40 hover:bg-white md:w-auto'>
                 View Pricing
                 <svg className='-mr-1 ml-2 h-5 w-5' fill='currentColor' viewBox='0 0 20 20'>

@@ -239,7 +239,7 @@ const Pricing = () => {
                 <span>Enhanced AI</span>
               </li>
             </ul>
-            <Link href="/home/contact">
+            <Link href="/contact">
               <button className="inline-flex w-full items-center justify-center rounded-3xl border border-slate-300 bg-blue-600 px-5 py-3 text-center text-base  font-medium text-white hover:bg-white/10 focus:ring-4 focus:ring-slate-100">
                 Buy Now
               </button>
@@ -383,7 +383,7 @@ const Pricing = () => {
                 <span>Enhanced AI</span>
               </li>
             </ul>
-            <Link href="/home/contact">
+            <Link href="/contact">
               <button className="inline-flex w-full items-center justify-center rounded-3xl border border-slate-300 bg-blue-600 px-5 py-3 text-center text-base  font-medium text-white hover:bg-white/10 focus:ring-4 focus:ring-slate-100  ">
                 Buy Now
               </button>
